@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="web.css">
+</head>
+<body>
+<!-- <div class="container">
+<div class="head">
+ <h1>Login/signup</h1>
+
+ <form action="webloginn.php" method="POST" class="Login" name="login">
+ <ul>
+ <li>Username <input class="username" type="text" name="username">
+ </li>
+ <li>Password <input class="password" type="password" name="password">
+ </li>
+ </ul>
+<button class="submit" value="login" name="submit">Login</button>
+<p class="message">not registered? <a href="#">register</a>
+</p>
+</form>
+</div>
+</div> -->
+
+<div class="container">
+	<div class="header">
+ <h1>register</h1>
+</div>
+ <form action="dbmsproject.php" method="POST" >
+ <ul>
+ <li>Username <input class="username" type="text" name="username">
+ </li>
+ <li>Password <input class="password" type="password" name="password">
+ </li>
+ <!-- <li>email <input class="email" type="email" name="email"> -->
+ </li>
+ </ul>
+ <button class="submit" value="register" name="submit"><a href="db/dbmsproject.php">Login</a></button>
+
+<p class="message"> <a href="db/dbmsproject.php"></a>
+</p>
+</form>
+
+
+</div>
+	<!-- <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+	<script>
+	$('.message a').click(function(){
+	  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+	  });
+		</script> -->
+<script>
+function validate()
+{
+	var un = document.login.username.value;
+	var pw = document.login.password.value;
+	var valid = false;
+	var usernameArray = ["admin"];
+	var passwordArray = ["admin"];
+	for (var i = 0; i < usernameArray.length; i++)
+ {
+	if ((un == usernameArray[i]) && (pw == passwordArray[i]))
+	{
+		valid = true;
+		break;
+	}
+}
+	if (valid)
+	{
+		// alert("Welcome" + " " + usernameArray[i]);
+		window.location = "dbmsproject.php";
+		return false;
+	}
+else (!valid)
+	{
+		alert("Wrong password or username");
+	}
+}
+</script>
+</body>
+</html>
